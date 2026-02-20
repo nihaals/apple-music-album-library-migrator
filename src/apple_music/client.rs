@@ -28,7 +28,6 @@ impl Client {
         };
         let client = reqwest::Client::builder()
             .default_headers(headers)
-            .danger_accept_invalid_certs(true) // TODO: Remove
             .build()?;
         Ok(Self {
             client,
