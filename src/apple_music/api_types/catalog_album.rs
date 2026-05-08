@@ -49,7 +49,7 @@ pub struct SongAttributes {
     pub(in crate::apple_music) isrc: String,
     pub(in crate::apple_music) name: String,
     /// YYYY-MM-DD
-    pub(in crate::apple_music) release_date: String,
+    pub(in crate::apple_music) release_date: Option<String>,
     pub(in crate::apple_music) track_number: u8,
 }
 

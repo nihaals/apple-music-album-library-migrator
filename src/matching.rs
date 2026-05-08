@@ -151,7 +151,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
                 TrackWithLibrary {
@@ -160,7 +160,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: Some("i.2".to_owned()),
                 },
             ],
@@ -177,7 +177,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "4".to_owned(),
@@ -185,7 +185,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
             ],
         };
@@ -216,7 +216,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
                 TrackWithLibrary {
@@ -225,7 +225,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: Some("i.2".to_owned()),
                 },
             ],
@@ -242,7 +242,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "3".to_owned(),
@@ -250,7 +250,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
             ],
         };
@@ -280,7 +280,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -296,7 +296,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "3".to_owned(),
@@ -304,7 +304,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
             ],
         };
@@ -328,7 +328,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -344,7 +344,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "4".to_owned(),
@@ -352,7 +352,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
             ],
         };
@@ -376,7 +376,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -391,7 +391,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
             }],
         };
         assert!(match_tracks(&source, &destination).is_err());
@@ -410,7 +410,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -425,7 +425,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
             }],
         };
         assert!(match_tracks(&source, &destination).is_err());
@@ -444,7 +444,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -459,7 +459,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC2".to_owned(),
-                release_date: "2020-01-02".to_owned(),
+                release_date: Some("2020-01-02".to_owned()),
             }],
         };
         assert!(match_tracks(&source, &destination).is_err());
@@ -478,7 +478,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -493,7 +493,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC2".to_owned(),
-                release_date: "2020-01-02".to_owned(),
+                release_date: Some("2020-01-02".to_owned()),
             }],
         };
         let expected = vec![TrackMatchResult::Match {
@@ -516,7 +516,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -531,7 +531,7 @@ mod tests {
                 artist_name: "Artist 2".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC2".to_owned(),
-                release_date: "2020-01-02".to_owned(),
+                release_date: Some("2020-01-02".to_owned()),
             }],
         };
         let expected = vec![TrackMatchResult::NoMatch {
@@ -554,7 +554,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC11".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
                 TrackWithLibrary {
@@ -563,7 +563,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC21".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: Some("i.2".to_owned()),
                 },
             ],
@@ -580,7 +580,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: true,
                     isrc: "ISRC12".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "22".to_owned(),
@@ -588,7 +588,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: true,
                     isrc: "ISRC22".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                 },
             ],
         };
@@ -619,7 +619,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
                 TrackWithLibrary {
@@ -628,7 +628,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
             ],
@@ -644,7 +644,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-02".to_owned(),
+                release_date: Some("2020-01-02".to_owned()),
             }],
         };
         assert!(match_tracks(&source, &destination).is_err());
@@ -663,7 +663,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -679,7 +679,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "3".to_owned(),
@@ -687,7 +687,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
             ],
         };
@@ -708,7 +708,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
                 TrackWithLibrary {
@@ -717,7 +717,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-01".to_owned(),
+                    release_date: Some("2020-01-01".to_owned()),
                     library_id: None,
                 },
             ],
@@ -733,7 +733,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-02".to_owned(),
+                release_date: Some("2020-01-02".to_owned()),
             }],
         };
         assert!(match_tracks(&source, &destination).is_err());
@@ -752,7 +752,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -768,7 +768,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "2".to_owned(),
@@ -776,7 +776,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC1".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
             ],
         };
@@ -796,7 +796,7 @@ mod tests {
                 artist_name: "Artist".to_owned(),
                 is_explicit: false,
                 isrc: "ISRC1".to_owned(),
-                release_date: "2020-01-01".to_owned(),
+                release_date: Some("2020-01-01".to_owned()),
                 library_id: None,
             }],
         };
@@ -812,7 +812,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC2".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
                 TrackNoLibrary {
                     catalog_id: "3".to_owned(),
@@ -820,7 +820,7 @@ mod tests {
                     artist_name: "Artist".to_owned(),
                     is_explicit: false,
                     isrc: "ISRC3".to_owned(),
-                    release_date: "2020-01-02".to_owned(),
+                    release_date: Some("2020-01-02".to_owned()),
                 },
             ],
         };
