@@ -1,7 +1,7 @@
 mod apple_music;
 mod matching;
 
-use anyhow::{Result, ensure};
+use anyhow::{Context, Result, ensure};
 use clap::{CommandFactory, Parser, Subcommand, ValueEnum};
 
 use crate::apple_music::custom_types;
@@ -96,18 +96,23 @@ async fn main() -> Result<()> {
             let client =
                 apple_music::Client::new(&developer_token, origin_header, user_token, storefront)?;
             let source_album = {
-                let library_album = client.get_library_album(&source_album_library_id).await?;
+                let library_album = client
+                    .get_library_album(&source_album_library_id)
+                    .await
+                    .context("Failed to get library album")?;
                 ensure!(library_album.library_id()? == source_album_library_id);
                 let catalog_album = client
                     .get_catalog_album(library_album.catalog_id()?)
-                    .await?;
+                    .await
+                    .context("Failed to get library catalog album")?;
                 let album: custom_types::Album<custom_types::TrackNoLibrary> =
                     catalog_album.try_into()?;
                 album.with_library_info(&library_album)?
             };
             let destination_album: custom_types::Album<custom_types::TrackNoLibrary> = client
                 .get_catalog_album(&destination_album_catalog_id)
-                .await?
+                .await
+                .context("Failed to get destination catalog album")?
                 .try_into()?;
             ensure!(destination_album.catalog_id == destination_album_catalog_id);
             ensure!(
