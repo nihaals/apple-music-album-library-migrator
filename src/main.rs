@@ -102,7 +102,11 @@ async fn main() -> Result<()> {
                     .context("Failed to get library album")?;
                 ensure!(library_album.library_id()? == source_album_library_id);
                 let catalog_album = client
-                    .get_catalog_album(library_album.catalog_id()?)
+                    .get_catalog_album(
+                        library_album
+                            .catalog_id()
+                            .context("Failed to get library album catalog ID")?,
+                    )
                     .await
                     .context("Failed to get library catalog album")?;
                 let album: custom_types::Album<custom_types::TrackNoLibrary> =
